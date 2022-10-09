@@ -22,9 +22,8 @@ html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-family: "Google Sans Display", Roboto, Arial, sans-serif;;
-    background-color: #c2e3de;
-    width: 85%;
-    margin: 0 auto;
+    background-color:  #1f1f1f;
+
   }
 
 ::-webkit-scrollbar {

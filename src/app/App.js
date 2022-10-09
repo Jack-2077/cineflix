@@ -1,5 +1,5 @@
 import GlobalStyles from './GlobalStyles';
-import { Header, SearchBar } from '../components';
+import { Header, SearchBar, MovieCard } from '../components';
 import styled from 'styled-components';
 
 const StyledContainer = styled.section`
@@ -11,9 +11,9 @@ function App() {
   return (
     <>
       <GlobalStyles />
+      <Header />
       <StyledContainer>
-        <Header />
-        <SearchBar />
+        <MovieCard />
       </StyledContainer>
     </>
   );

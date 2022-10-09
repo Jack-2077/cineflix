@@ -11,7 +11,7 @@ const StyledSearchWrapper = styled.div`
     position: absolute;
     top: 20px;
     left: 25px;
-    opacity: 0.5;
+    color: #ffff;
   }
   .accessibility-text {
     position: absolute;
@@ -35,8 +35,8 @@ const StyledSearchWrapper = styled.div`
     width: 100%;
     height: 40px;
     outline: none;
-    background-color: #f3f3f4;
-    color: #0d0c22;
+    background-color: #1f1f1f;
+    color: #ffff;
     appearance: none;
   }
 `;
