@@ -1,20 +1,45 @@
+import styled from 'styled-components/macro';
+import debounce from 'lodash.debounce';
 import GlobalStyles from './GlobalStyles';
-import { Header, SearchBar, MovieCard } from '../components';
-import styled from 'styled-components';
+import { SearchBar, MovieCard } from '../components';
+import { useMemo } from 'react';
 
-const StyledContainer = styled.section`
-  padding: 0.5rem 0.85rem;
-  width: 100%;
+const StyledHeader = styled.header`
+  display: flex;
+  justify-content: flex-start;
+  gap: calc(2.66rem + 20vw);
+  align-items: center;
+  background-color: #121212;
+
+  h1 {
+    font-size: 2.66rem;
+    color: #ffff;
+  }
 `;
 
 function App() {
+  const movies = [];
+
+  const inputChangeHandler = (e) => {
+    const title = e.target.value;
+    if (title) {
+      console.log(e.target.value);
+    }
+  };
+
+  const debouncedInputChangeHandler = useMemo(
+    () => debounce(inputChangeHandler, 300),
+    []
+  );
+
   return (
     <>
       <GlobalStyles />
-      <Header />
-      <StyledContainer>
-        <MovieCard />
-      </StyledContainer>
+      <StyledHeader>
+        <h1>CineFlix</h1>
+        <SearchBar handleInputChange={debouncedInputChangeHandler} />
+      </StyledHeader>
+      <MovieCard movies={movies} />
     </>
   );
 }

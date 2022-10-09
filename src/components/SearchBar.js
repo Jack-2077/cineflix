@@ -41,14 +41,18 @@ const StyledSearchWrapper = styled.div`
   }
 `;
 
-export default function SearchBar() {
+export default function SearchBar({ handleInputChange }) {
   return (
     <StyledSearchWrapper>
       <SearchIcon />
       <label htmlFor='search' className='accessibility-text'>
         Search
       </label>
-      <input type='search' placeholder='Type title here' />
+      <input
+        type='search'
+        onChange={handleInputChange}
+        placeholder='Type title here'
+      />
     </StyledSearchWrapper>
   );
 }
