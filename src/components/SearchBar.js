@@ -39,6 +39,12 @@ const StyledSearchWrapper = styled.div`
     color: #ffff;
     appearance: none;
   }
+
+  @media (max-width: 930px) {
+    input {
+      width: 95%;
+    }
+  }
 `;
 
 export default function SearchBar({ handleInputChange }) {
