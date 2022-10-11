@@ -37,8 +37,10 @@ function App() {
         if (moviesList) {
           setMovies(moviesList);
         }
-      });
+      })
+      .catch((err) => console.log(err));
   };
+
   const inputChangeHandler = (e) => {
     const title = e.target.value;
     if (title) {
@@ -62,6 +64,11 @@ function App() {
         <SearchBar handleInputChange={debouncedInputChangeHandler} />
       </StyledHeader>
       <MovieCard movies={movies} />
+      {movies.length === 0 && (
+        <p style={{ fontSize: '1.5rem', color: '#ffff', paddingLeft: '1.5em' }}>
+          Search Results will appear once you start typing
+        </p>
+      )}
     </>
   );
 }

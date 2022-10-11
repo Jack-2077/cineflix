@@ -50,6 +50,12 @@ const StyledMovieCard = styled.div`
       font-size: 0.85em;
       color: #919191;
     }
+
+    button {
+      background: #6ac045;
+      font-weight: bold;
+      color: #fff;
+    }
   }
 
   @media (min-width: 992px) {
@@ -58,10 +64,8 @@ const StyledMovieCard = styled.div`
       height: 334px;
     }
 
-    .movie {
-      &__title {
-        font-size: 0.95em;
-      }
+    .movie__title {
+      font-size: 0.95em;
     }
   }
 
@@ -81,27 +85,24 @@ const StyledMovieCard = styled.div`
 export default function MovieCard({ movies }) {
   return (
     <StyledWrapper>
-      {movies ? (
-        <div>
-          {movies.map((movie, i) => {
-            const imageSrc =
-              movie?.Poster === 'N/A'
-                ? require('../assets/noposter.jpg')
-                : movie?.Poster;
-            return (
-              <StyledMovieCard key={i}>
-                <img src={imageSrc} alt='Poster' title={movie?.Title} />
-                <div className='movie'>
-                  <p className='movie__title'>{movie?.Title}</p>
-                  <p className='movie__year'>{movie?.Year}</p>
-                </div>
-              </StyledMovieCard>
-            );
-          })}
-        </div>
-      ) : (
-        <h1>Movie Not Found</h1>
-      )}
+      <div>
+        {movies.map((movie, i) => {
+          const imageSrc =
+            movie?.Poster === 'N/A'
+              ? require('../assets/noposter.jpg')
+              : movie?.Poster;
+          return (
+            <StyledMovieCard key={i}>
+              <img src={imageSrc} alt='Poster' title={movie?.Title} />
+              <div className='movie'>
+                <p className='movie__title'>{movie?.Title}</p>
+                <p className='movie__year'>{movie?.Year}</p>
+                <button>Add</button>
+              </div>
+            </StyledMovieCard>
+          );
+        })}
+      </div>
     </StyledWrapper>
   );
 }
