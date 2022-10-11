@@ -16,7 +16,7 @@ const StyledWrapper = styled.section`
 
   @media (max-width: 690px) {
     & > div {
-      padding-left: 2em;
+      padding-left: 10vw;
     }
   }
 `;
@@ -55,6 +55,10 @@ const StyledMovieCard = styled.div`
       background: #6ac045;
       font-weight: bold;
       color: #fff;
+    }
+
+    button:hover {
+      opacity: 0.9;
     }
   }
 
